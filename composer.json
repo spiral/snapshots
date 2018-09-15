@@ -18,12 +18,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Spiral\\Snaphsots\\": "src/"
+      "Spiral\\Snapshots\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Spiral\\Snaphsots\\": "tests/Snapshots/"
+      "Spiral\\Snapshots\\": "tests/Snapshots/"
     }
   }
 }

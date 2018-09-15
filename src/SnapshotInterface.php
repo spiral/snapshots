@@ -37,5 +37,5 @@ interface SnapshotInterface
      *
      * @return array
      */
-    public function getDescription(): array;
+    public function describe(): array;
 }

@@ -62,7 +62,7 @@ final class Snapshot implements SnapshotInterface
     /**
      * @inheritdoc
      */
-    public function getDescription(): array
+    public function describe(): array
     {
         return [
             'error'    => $this->getMessage(),
