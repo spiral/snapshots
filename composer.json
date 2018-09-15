@@ -1,0 +1,29 @@
+{
+  "name": "spiral/snapshots",
+  "type": "library",
+  "description": "Exception Snapshot Manager",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Wolfy-J",
+      "email": "wolfy.jd@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~7.0",
+    "mockery/mockery": "^1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Spiral\\Snaphsots\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Spiral\\Snaphsots\\": "tests/Snapshots/"
+    }
+  }
+}
