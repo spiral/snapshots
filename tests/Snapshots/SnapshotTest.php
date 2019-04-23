@@ -31,9 +31,9 @@ class SnapshotTest extends TestCase
         $this->assertContains("Error", $description['error']);
         $this->assertContains("message", $description['error']);
         $this->assertContains(__FILE__, $description['error']);
-        $this->assertContains("18", $description['error']);
+        $this->assertContains("19", $description['error']);
 
         $this->assertSame(__FILE__, $description['location']['file']);
-        $this->assertSame(18, $description['location']['line']);
+        $this->assertSame(19, $description['location']['line']);
     }
 }
