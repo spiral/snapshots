@@ -25,7 +25,7 @@ class SnapshotTest extends TestCase
         $this->assertContains("Error", $s->getMessage());
         $this->assertContains("message", $s->getMessage());
         $this->assertContains(__FILE__, $s->getMessage());
-        $this->assertContains("18", $s->getMessage());
+        $this->assertContains("19", $s->getMessage());
 
         $description = $s->describe();
         $this->assertContains("Error", $description['error']);
