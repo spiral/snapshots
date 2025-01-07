@@ -47,18 +47,18 @@ final class StorageSnapshotTest extends TestCase
         $this->bucket
             ->expects($this->once())
             ->method('create')
-            ->with($this->callback(static fn (string $filename): bool => \str_contains($filename, 'Error.txt')))
+            ->with($this->callback(static fn (string $filename) => \str_contains($filename, 'Error.txt')))
             ->willReturn($this->file);
 
         $e = new \Error('message');
         $s = (new StorageSnapshot('foo', $this->storage, Verbosity::VERBOSE, $this->renderer))->create($e);
 
-        self::assertSame($e, $s->getException());
+        $this->assertSame($e, $s->getException());
 
-        self::assertStringContainsString('Error', $s->getMessage());
-        self::assertStringContainsString('message', $s->getMessage());
-        self::assertStringContainsString(__FILE__, $s->getMessage());
-        self::assertStringContainsString('53', $s->getMessage());
+        $this->assertStringContainsString('Error', $s->getMessage());
+        $this->assertStringContainsString('message', $s->getMessage());
+        $this->assertStringContainsString(__FILE__, $s->getMessage());
+        $this->assertStringContainsString('53', $s->getMessage());
     }
 
     public function testCreateWithDirectory(): void
@@ -66,18 +66,18 @@ final class StorageSnapshotTest extends TestCase
         $this->bucket
             ->expects($this->once())
             ->method('create')
-            ->with($this->callback(static fn (string $filename): bool => \str_starts_with($filename, 'foo/bar')))
+            ->with($this->callback(static fn (string $filename) => \str_starts_with($filename, 'foo/bar')))
             ->willReturn($this->file);
 
         $e = new \Error('message');
         $s = (new StorageSnapshot('foo', $this->storage, Verbosity::VERBOSE, $this->renderer, 'foo/bar'))
             ->create($e);
 
-        self::assertSame($e, $s->getException());
+        $this->assertSame($e, $s->getException());
 
-        self::assertStringContainsString('Error', $s->getMessage());
-        self::assertStringContainsString('message', $s->getMessage());
-        self::assertStringContainsString(__FILE__, $s->getMessage());
-        self::assertStringContainsString('72', $s->getMessage());
+        $this->assertStringContainsString('Error', $s->getMessage());
+        $this->assertStringContainsString('message', $s->getMessage());
+        $this->assertStringContainsString(__FILE__, $s->getMessage());
+        $this->assertStringContainsString('72', $s->getMessage());
     }
 }
