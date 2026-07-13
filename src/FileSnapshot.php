@@ -14,12 +14,13 @@ use Symfony\Component\Finder\SplFileInfo;
 class FileSnapshot
 {
     public function __construct(
-        private readonly string $directory,
-        private readonly int $maxFiles,
-        private readonly Verbosity $verbosity,
-        private readonly ExceptionRendererInterface $renderer,
-        private readonly FilesInterface $files,
-    ) {}
+        private string $directory,
+        private int $maxFiles,
+        private Verbosity $verbosity,
+        private ExceptionRendererInterface $renderer,
+        private FilesInterface $files
+    ) {
+    }
 
     public function create(\Throwable $e): SnapshotInterface
     {
@@ -39,7 +40,7 @@ class FileSnapshot
             $filename,
             $this->renderer->render($snapshot->getException(), $this->verbosity),
             FilesInterface::RUNTIME,
-            true,
+            true
         );
     }
 
@@ -50,7 +51,7 @@ class FileSnapshot
     {
         $finder = new Finder();
         $finder->in($this->directory)->sort(
-            static fn(SplFileInfo $a, SplFileInfo $b): int|float => $b->getMTime() - $a->getMTime(),
+            static fn (SplFileInfo $a, SplFileInfo $b) => $b->getMTime() - $a->getMTime()
         );
 
         $count = 0;
@@ -75,7 +76,7 @@ class FileSnapshot
             '%s/%s-%s.txt',
             $this->directory,
             $time->format('d.m.Y-Hi.s'),
-            (new \ReflectionClass($snapshot->getException()))->getShortName(),
+            (new \ReflectionClass($snapshot->getException()))->getShortName()
         );
     }
 
