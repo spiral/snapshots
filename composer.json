@@ -3,6 +3,12 @@
     "type": "library",
     "description": "Exception Snapshot Manager",
     "license": "MIT",
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/spiral"
+        }
+    ],
     "homepage": "https://spiral.dev",
     "support": {
         "issues": "https://github.com/spiral/framework/issues",
@@ -15,11 +21,11 @@
         },
         {
             "name": "Pavel Butchnev (butschster)",
-            "email": "pavel.buchnev@spiralscout.com"
+            "homepage": "https://github.com/butschster"
         },
         {
             "name": "Aleksei Gagarin (roxblnfk)",
-            "email": "alexey.gagarin@spiralscout.com"
+            "homepage": "https://github.com/roxblnfk"
         },
         {
             "name": "Maksim Smakouz (msmakouz)",
@@ -28,14 +34,14 @@
     ],
     "require": {
         "php": ">=8.1",
-        "spiral/exceptions": "^3.13.1",
-        "spiral/files": "^3.13.1",
-        "symfony/finder": "^5.3.7 || ^6.0 || ^7.0"
+        "spiral/exceptions": "^3.18",
+        "spiral/files": "^3.18",
+        "symfony/finder": "^6.4.30 || ^7.4 || ^8.0"
     },
     "require-dev": {
-        "spiral/storage": "^3.13.1",
-        "phpunit/phpunit": "^10.1",
-        "vimeo/psalm": "^5.9"
+        "spiral/storage": "^3.18",
+        "phpunit/phpunit": "^10.5.41",
+        "vimeo/psalm": "^6.0"
     },
     "autoload": {
         "psr-4": {
@@ -49,7 +55,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "3.13.x-dev"
+            "dev-master": "3.18.x-dev"
         }
     },
     "suggest": {
