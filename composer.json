@@ -2,7 +2,6 @@
     "name": "spiral/snapshots",
     "type": "library",
     "description": "Exception Snapshot Manager",
-    "keywords": ["spiral", "snapshots", "exceptions", "error-reporting"],
     "license": "MIT",
     "funding": [
         {
@@ -34,7 +33,7 @@
         }
     ],
     "require": {
-        "php": ">=8.2",
+        "php": ">=8.1",
         "spiral/exceptions": "^3.18.0",
         "spiral/files": "^3.18.0",
         "symfony/finder": "^6.4.30 || ^7.4 || ^8.0"
@@ -42,7 +41,7 @@
     "require-dev": {
         "spiral/storage": "^3.18.0",
         "phpunit/phpunit": "^10.5.41",
-        "vimeo/psalm": "^7.0.2"
+        "vimeo/psalm": "^6.0"
     },
     "autoload": {
         "psr-4": {
